@@ -9,6 +9,7 @@ router.get('/getSheetdata', (req, res) => {
   const array = [];
   var count = 1;
 
+//   getting data from sheet
   axios.get("https://sheetdb.io/api/v1/sna0vtf8dqafy")
     .then((resp) => {
       console.log(resp.data.length)
@@ -21,6 +22,7 @@ router.get('/getSheetdata', (req, res) => {
         const message = `Be informed that on ${startDate}, your account with Green Lights was credited with MwK ${amountInvested} Your current balance is MwK ${interestAmount}`
          console.log(message);
 
+     //  maytapi section
          setTimeout(function() {
 
             var data = JSON.stringify({"to_number":`${mobile}`,"type":"text","message":`${message}`});
